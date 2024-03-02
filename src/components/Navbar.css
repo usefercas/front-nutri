@@ -1,0 +1,21 @@
+/* Navbar.css */
+
+.navbar {
+    background-color: #add8e6; /* Cambia el color de fondo del Navbar a azul claro */
+}
+  
+.navbar-brand {
+    color: #000000; /* Cambia el color del texto de la marca a negro */
+    font-size: 1.5rem; /* Tamaño del texto de la marca */
+    font-weight: bold; /* Peso de la fuente de la marca */
+}
+  
+.nav-link {
+    color: #000000; /* Cambia el color del texto de los enlaces a negro */
+    font-size: 1.2rem; /* Tamaño del texto de los enlaces */
+    margin-left: 20px; /* Espacio entre los enlaces */
+}
+  
+.nav-link:hover {
+    color: #808080; /* Cambia el color del texto de los enlaces al pasar el cursor sobre ellos */
+}
