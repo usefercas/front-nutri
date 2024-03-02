@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { generarRecetas } from '../services/RecomendacionesService';
 import { useNavigate } from "react-router-dom";
+import CalendarioSemanal from './CalendarioSemanal';
 
 
 function DietForm() {
@@ -30,7 +31,7 @@ function DietForm() {
                 objetivo
             };
             const response = await generarRecetas(datos);
-            console.log('Dietas generadas:', response);
+            console.log('Dietas generadas: ', response);
             setLoading(false);
             setData(response);
         } catch (error) {
@@ -41,7 +42,8 @@ function DietForm() {
     };
 
     if (data) {
-        return <Cards title={data.message} body={data.success} />
+        console.log(data.data);
+        return <CalendarioSemanal diets={data.data} />
     } else {
         return (
             <div className="container">
@@ -102,20 +104,11 @@ function DietForm() {
                     <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Generando...' : 'Generar Dietas'}</button>
                 </form>
                 <hr></hr>
-                {data && <Cards title={data.message} body={data.success} />}
             </div>
         )
     };
 }
 
-const Cards = ({ title, body }) => {
-    return (
-        <div>
-            <h2>{title}</h2>
-            <p>{body}</p>
-        </div>
-    );
-};
 
 export default DietForm;
 
