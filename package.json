@@ -10,11 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.0",
+    "core-js": "^3.36.0",
     "dotenv": "^16.4.5",
     "formik": "^2.4.5",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",

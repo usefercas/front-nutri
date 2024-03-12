@@ -1,14 +1,19 @@
 import React from 'react';
-import DietForm from './DietForm';
+import { Player } from '@lottiefiles/react-lottie-player';
+import DietForm from './DietForm'
 
 const Home = () => {
   return (
     <div>
-      <h2>¡Bienvenido a la página de inicio!</h2>
-      <p>Esta es la página de inicio de nuestra aplicación.</p>
-      <DietForm /> 
+        {/* <DietForm/> */}
+
+      <h1>Bienvenido a la página de inicio</h1>
+      <p>Este es un ejemplo de un componente Home en React</p>
     </div>
   );
 };
+
+
+
 
 export default Home;

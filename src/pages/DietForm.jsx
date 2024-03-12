@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { generarRecetas } from '../services/RecomendacionesService';
-import { useNavigate } from "react-router-dom";
 import CalendarioSemanal from './CalendarioSemanal';
+import { getUserId } from '../stores/AccessTokenStore';
 
 
 function DietForm() {
+    console.log("Epa");
     const [edad, setEdad] = useState('');
     const [peso, setPeso] = useState('');
     const [altura, setAltura] = useState('');
@@ -42,8 +43,9 @@ function DietForm() {
     };
 
     if (data) {
+        console.log(data.messageId);
         console.log(data.data);
-        return <CalendarioSemanal diets={data.data} />
+        return <CalendarioSemanal diets={JSON.parse(data.data)} messageId={data.messageId}/>
     } else {
         return (
             <div className="container">
@@ -104,6 +106,7 @@ function DietForm() {
                     <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Generando...' : 'Generar Dietas'}</button>
                 </form>
                 <hr></hr>
+                
             </div>
         )
     };

@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import clsx from "clsx";
+import { confirmar } from "../services/PlanService";
+import Button from "../components/Button"
+import { getUserId } from '../stores/AccessTokenStore';
+import { useNavigate } from "react-router-dom";
 
-function CalendarioSemanal({ diets }) {
+function CalendarioSemanal({ diets, messageId }) {
+  const msgId = { messageId };
+  console.log(messageId)
   const ddd = { diets };
-  console.log(ddd.diets.desayuno.length);
+  console.log(JSON.stringify(ddd));
   const [calendar, setCalendar] = useState([]);
   console.log(ddd.diets.desayuno.map(des => des.receta));
   useEffect(() => {
@@ -29,6 +36,20 @@ function CalendarioSemanal({ diets }) {
     setCalendar(newCalendar);
   }, []);
 
+  const navigate = useNavigate();
+  
+  const handleRequest = (messageId) => {
+  const xxx = JSON.stringify(messageId);
+  console.log("Message id : " + xxx);
+  confirmar(getUserId(), messageId.messageId)
+    .then(response => {
+      console.log("Plan Confirmado");
+      navigate('/profile');
+    })
+    .catch(error => console.log("Error guardando plan: " + error));
+}
+
+  // Lógica para guardar las receta
   return (
     <div className="container">
       <h1 className="mt-5 mb-3">Calendario Semanal</h1>
@@ -67,6 +88,9 @@ function CalendarioSemanal({ diets }) {
           </div>
         </div>
       </div>
+      <div>
+        <Button onClick={() => handleRequest(msgId)} text="Confirmar Receta" to={"/profile"} />
+      </div>
     </div>
   );
 }
@@ -78,9 +102,9 @@ const RecipeCard = ({ keyId, receta, proteina, carbohidratos, grasa }) => {
       <p>{proteina}</p>
       <p>{carbohidratos}</p>
       <p>{grasa}</p>
-
     </div>
   );
 };
+
 
 export default CalendarioSemanal;
