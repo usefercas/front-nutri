@@ -15,12 +15,14 @@ export const getPlan = (userId) => {
   const params = {
     userId: userId,
   };
-  http.get('/recipes', { params })
-    .then(response => {
-      console.log("Respuest get plan: " + response);
-      return response;
-    })
-    .catch(error => console.log("Error: " + error));
+  return http.get('/recipes', { params });
+  // return http.get('/recipes', { params })
+  //   .then(response => {
+  //     console.log("Respuest get plan: " + JSON.stringify(response));
+  //     console.log("Respuest get plan2: " + JSON.stringify(response));
+  //     return response;
+  //   })
+  //   .catch(error => console.log("Error: " + error));
 }
 
 

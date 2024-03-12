@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../contexts/AuthContext";
 import Avatar from "./Avatar";
 import Button from "../components/Button";
@@ -11,31 +11,37 @@ const Profile = () => {
   const { user } = useContext(AuthContext); // todo mirar de aqui si se puede sacar el id
   const navigate = useNavigate();
   const navigateToCreatePlan = () => navigate('/create');
-  const [data, setData] = useState(null);
-  const xyx = getPlan(getUserId());
-  
-  console.log(xyx);
-  setData(xyx);
+  const [responsePlan, setResponsePlan] = useState([]);
+  const [loading, setLoading] = useState(true)
 
-  if (data) {
-    console.log("Esta es la data: " + data);
-    return <CalendarioSemanal diets={JSON.parse(data.data)} messageId={data.messageId} />
+  useEffect(() => {
+    console.log("Ejecutando use Effect");
+    getPlan(getUserId())
+      .then(plans => {
+        console.log("Esta es la respuesta de la promesa: " + plans);
+        setResponsePlan(plans);
+        setLoading(false);
+      })
+  });
 
-  } else {
-    return (
-      <div className="container">
-        <div className="d-flex align-items-center gap-2">
-          <h1>Perfil</h1>
+  console.log("Loading component:  " + loading)
+  if (!loading) {
+    console.log("Este es el plan xyx " + responsePlan);
+    return <CalendarioSemanal diets={responsePlan} messageId={responsePlan.messageId} />
+  }
+  return (
+    <div className="container">
+      <div className="d-flex align-items-center gap-2">
+        <h1>Perfil</h1>
 
-          {/* <div>
+        {/* <div>
             <h2>{user.username}</h2>
             <p>Email: {user.email}</p>
           </div> */}
-          <Button onClick={navigateToCreatePlan} text="Generar nueva dieta" />
-        </div>
+        <Button onClick={navigateToCreatePlan} text="Generar nueva dieta" />
       </div>
-    );
-  }
+    </div>
+  );
 };
 
 export default Profile;

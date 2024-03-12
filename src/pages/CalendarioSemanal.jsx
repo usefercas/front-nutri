@@ -10,9 +10,10 @@ function CalendarioSemanal({ diets, messageId }) {
   const msgId = { messageId };
   console.log(messageId)
   const ddd = { diets };
-  console.log(JSON.stringify(ddd));
+  const dietsObject = JSON.parse(ddd.diets);
+  console.log(JSON.parse(ddd.diets).desayuno);
   const [calendar, setCalendar] = useState([]);
-  console.log(ddd.diets.desayuno.map(des => des.receta));
+  //console.log(ddd.diets.desayuno.map(des => des.receta));
   useEffect(() => {
     const today = new Date();
     const currentDay = today.getDay(); // 0 para Domingo, 1 para Lunes, etc.
@@ -51,7 +52,7 @@ function CalendarioSemanal({ diets, messageId }) {
 
   // Lógica para guardar las receta
   return (
-    <div className="container">
+    <div className="container1">
       <h1 className="mt-5 mb-3">Calendario Semanal</h1>
       <div className="row">
         <div className="col">
@@ -74,9 +75,9 @@ function CalendarioSemanal({ diets, messageId }) {
                     {week.map((day, dayIndex) => (
                       <td key={dayIndex}>
                         {day}
-                        <RecipeCard receta={JSON.stringify(ddd.diets.desayuno[dayIndex])} />
-                        <RecipeCard receta={JSON.stringify(ddd.diets.comida[dayIndex])} />
-                        <RecipeCard receta={JSON.stringify(ddd.diets.cena[dayIndex])} />
+                        <RecipeCard receta={JSON.stringify(dietsObject.desayuno[dayIndex])} />
+                        <RecipeCard receta={JSON.stringify(dietsObject.comida[dayIndex])} />
+                        <RecipeCard receta={JSON.stringify(dietsObject.cena[dayIndex])} />
                       </td> // todo insertar recetas
                       // <RecipeCard receta={JSON.stringify(ddd.diets.desayuno[])} />
                       // ddd.diets.desayuno.map(x =>   <td key={dayIndex}>{day} <RecipeCard receta={JSON.stringify(x.receta)} /> </td>)
