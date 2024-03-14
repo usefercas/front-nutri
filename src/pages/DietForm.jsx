@@ -45,12 +45,16 @@ function DietForm() {
     if (data) {
         console.log(data.messageId);
         console.log(data.data);
-        return <CalendarioSemanal diets={data.data} messageId={data.messageId}/>
+
+        return (
+         
+                <CalendarioSemanal diets={data.data} messageId={data.messageId} />
+        );
     } else {
         return (
             <div className="form-container"> {/* Nuevo contenedor para el formulario */}
                 <div className="container">
-                    <h1>Generador de Dietas</h1>
+                    <h1 className='genera'>Generador de Dietas</h1>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="edad">Edad:</label>
@@ -101,10 +105,12 @@ function DietForm() {
                             <select id="objetivo" className="form-control" value={objetivo} onChange={(e) => setObjetivo(e.target.value)} required>
                                 <option value="perder_peso">Perder peso</option>
                                 <option value="ganar_masa_muscular">Ganar masa muscular</option>
+                                <option value="mantener_peso">Mantener peso</option>
                             </select>
+                            <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Generando...' : 'Generar Dietas'}</button>
                         </div>
 
-                        <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Generando...' : 'Generar Dietas'}</button>
+
                     </form>
                 </div>
             </div>

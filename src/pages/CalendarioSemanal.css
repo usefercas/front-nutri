@@ -1,0 +1,25 @@
+p {
+    color: black;
+}
+
+.customCard {
+    color: black !important;
+}
+
+/* revisar no funciona*/
+#tableId {
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    width: 50% !important;
+    background: black !important;
+    border-radius: 10px !important;
+    padding: 40px !important;
+    }
+
+
+
+@media screen and (max-width: 480px) {
+  #tableId {
+    width: calc(100% - 80px) !important;
+  }
+}

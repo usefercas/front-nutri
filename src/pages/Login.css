@@ -1,0 +1,13 @@
+.login-page {
+    background-image: url('/use.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ajusta la altura mínima para cubrir toda la ventana */
+  }
+  
+  .login-page .container {
+    max-width: 800px !important;
+    width: 100% !important;
+  }
+  
