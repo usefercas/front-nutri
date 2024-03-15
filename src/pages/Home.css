@@ -1,36 +1,112 @@
-/* Home.css */
-
 .home-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('./italia.png'); /* Asegúrate de reemplazar esto con la ruta correcta a tu imagen */
+  background-image: url('./italia.png');
   background-size: cover;
   background-position: center;
-  color: white; /* Ajusta el color del texto para que contraste con tu fondo */
+  color: white;
 }
 
-.content-home {
-
-  margin-top: 200px;
-}
 
 .button-home {
-  margin-top: 200px;
-  /* Ajusta el margen superior según sea necesario */
+  margin-top: 50px !important;
+  margin-left: 120px !important;
+}
+#comienza{
+  margin-top: 50px !important;
+  margin-left: 100px !important;
 }
 
-.create-button {
+
+.create-button2 {
   background-color: red;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.create-button:hover {
+.create-button2:hover {
   background-color: darkred;
 }
+
+.transparent-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 100px;
+  border-radius: 10px;
+  margin-top: -200px; 
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#parrafo{
+  color:white;
+}
+.title, #parrafo, #comienza, .create-button2 {
+  font-family: 'Roboto', sans-serif;
+}
+.logo1{
+  width: 100px; 
+  height: auto; 
+  display: block; 
+  margin: 50px auto 20px;
+  padding-top: 60%;
+}
+.logo2 {
+  width: 100px; 
+  height: auto; 
+  display: block; 
+  margin: 50px auto 20px;
+  padding-top: 20%;
+ 
+}
+.logo3 {
+  width: 80px; 
+  height: auto; 
+  display: block; 
+  margin: 50px auto 20px; 
+  padding-top: 20%;
+
+}
+.logo4 {
+  width: 100px; 
+  height: auto; 
+  display: block; 
+  margin: 50px auto 20px;
+  padding-top: 60%;
+}
+.iconos-container {
+  display: flex;
+  justify-content: space-around; 
+  position: fixed; 
+  bottom: 0; 
+  left: 0;
+  right: 0;
+  padding: 20px 0; 
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.iconos-container a {
+  margin: 0 10px; 
+}
+
+.create-button2 {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.create-button2:hover {
+  background-color: darkred;
+  color: white; 
+}
+

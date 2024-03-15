@@ -3,9 +3,8 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
-import "./Login.css"; // Asegúrate de que la ruta del archivo CSS es correcta
+import "./Login.css";
 
-// Esquema de validación
 const loginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email format').required('Email is required'),
   password: Yup.string().required('Password is required')
@@ -22,9 +21,8 @@ const Login = () => {
     },
     validationSchema: loginSchema,
     onSubmit: values => {
-      // Simula el proceso de inicio de sesión
       login(values)
-        .then(() => navigate('/profile')) // Navega al perfil después de iniciar sesión
+        .then(() => navigate('/profile'))
         .catch(error => console.error(error));
     },
   });
@@ -79,10 +77,10 @@ const Login = () => {
                           <div className="text-danger">{formik.errors.password}</div>
                         ) : null}
                       </div>
-
                       <div className="col-12">
-                        <button type="submit" className="btn btn-primary px-4 float-end mt-4">Login</button>
+                        <button type="submit" className="create-button">Login</button>
                       </div>
+
                     </form>
                   </div>
                 </div>
@@ -93,7 +91,7 @@ const Login = () => {
                 </div>
               </div>
             </div>
-       
+
           </div>
         </div>
       </div>

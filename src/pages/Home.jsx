@@ -1,25 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importa Link desde React Router
-import './Home.css'; // Importa tu archivo CSS
+import { Link } from 'react-router-dom';
+import './Home.css';
 
 const Home = () => {
   return (
     <div className="home-container">
-      <div className="content-home">
-        <h1 className="title">Bienvenido a la página de inicio</h1>
-        <p>Este es un ejemplo de un componente Home en React</p>
+      <div className="transparent-box">
+        <div className="content-home">
+          <h1 className="title">Paktlit calcula tu dieta</h1>
+          <p id="parrafo">
+            "Paklit: aplicación para generar tu plan de dieta según tus necesidades y objetivos.</p>
+        </div>
+        <div className="button-home">
+          <Link to="/register" className="create-button2">Regístrate</Link>
+        </div>
       </div>
-      <div className="button-home">
-        {/* Utiliza Link en lugar de un botón normal para redirigir a la página de registro */}
-        <Link to="/register" className="create-button">Registrate</Link>
+      <div className='iconos-container'>
+        <a href="https://www.prozis.com/es/es" target="_blank" rel="noopener noreferrer">
+          <img src="/prozis.png" alt="Prozis Logo" className="logo1" />
+        </a>
+        <a href="https://www.crossfit.com/" target="_blank" rel="noopener noreferrer">
+          <img src="/crosfit.png" alt="CrossFit Logo" className="logo2" />
+        </a>
+        <a href="https://spartanfitness.es/" target="_blank" rel="noopener noreferrer">
+          <img src="/spartano.png" alt="Spartan Fitness Logo" className="logo3" />
+        </a>
+        <a href="https://fitandfood.es/" target="_blank" rel="noopener noreferrer">
+          <img src="/fit.png" alt="Fit and Food Logo" className="logo4" />
+        </a>
       </div>
-      <h7>Comienza de manera gratuita </h7>
     </div>
   );
 };
 
 export default Home;
-
-
-
-

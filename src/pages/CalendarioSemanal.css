@@ -1,12 +1,31 @@
+*{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 p {
     color: black;
 }
 
-.customCard {
-    color: black !important;
+.calendar-container {
+  padding-left: 2000px;
+  width: 20%;
 }
 
-/* revisar no funciona*/
+.calendar-container h1 {
+  text-align: center; 
+}
+
+.calendar-container .customCard {
+    width: 100%; 
+    max-width: 22rem;
+    margin-bottom: 1rem; 
+  }
+  
+  @media (max-width: 768px) {
+    .calendar-container .customCard {
+      max-width: 100%; 
+    }
+  }
+
 #tableId {
     margin: 0 auto !important;
     padding: 0 20px !important;
@@ -15,11 +34,27 @@ p {
     border-radius: 10px !important;
     padding: 40px !important;
     }
-
-
-
 @media screen and (max-width: 480px) {
   #tableId {
     width: calc(100% - 80px) !important;
   }
+}
+.button-diet {
+  background-color: red !important;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; 
+  margin-left: 46%;
+}
+
+.button-diet:hover {
+  background-color: darkred;
+  color: white; 
 }

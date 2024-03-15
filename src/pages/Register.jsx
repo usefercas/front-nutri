@@ -3,7 +3,7 @@ import { object, string } from 'yup';
 import { useFormik } from 'formik';
 import { register } from '../services/AuthService';
 import { useNavigate } from 'react-router-dom';
-import './Register.css'; // Asegúrate de que la ruta del archivo CSS sea correcta
+import './Register.css';
 
 const userSchema = object({
   username: string().required('Required field'),
@@ -33,8 +33,8 @@ const Register = () => {
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-8">
             <h3 className="mb-3">Register your account</h3>
-          
-                <div className="bg-white shadow rounded">
+
+            <div className="bg-white shadow rounded">
               <div className="row">
                 <div className="col-md-6">
                   <div className="form-left py-5 px-5">
@@ -91,7 +91,8 @@ const Register = () => {
                         {formik.touched.password && formik.errors.password && <div className="invalid-feedback">{formik.errors.password}</div>}
                       </div>
                       <div className="col-12">
-                        <button type="submit" className="btn btn-primary px-4 float-end mt-4">Create account</button>
+                        <button type="submit" className="create-button3">Crear cuenta</button>
+
                       </div>
                     </form>
                   </div>

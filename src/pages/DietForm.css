@@ -1,50 +1,80 @@
 .form-container {
     display: flex;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     height: 120vh;
     background-image: url('/form3.png');
-     /* Ruta de la imagen de fondo */
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
-    background-position: center; /* Centra la imagen en el contenedor */
+    background-size: cover;
+    background-position: center;
     color: white;
+    position: relative; 
 }
 
 .container {
-    width: 300px; /* Ajusta el ancho del contenedor del formulario según sea necesario */
+    width: 300px;
+
+}
+.container {
+    width: 300px;
+    margin-bottom: 20px; /* Ajusta este valor según sea necesario para mover el formulario hacia arriba */
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
 
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-select {
-    width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-  
-    color: white;
-}
-
-button {
+.create-button {
     background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+    margin-left: 50px;
 }
 
-button:hover {
+.create-button:hover {
     background-color: darkred;
 }
 
+.new-loader {
+    width: 100px; 
+    height: 100px; 
+    border: 12px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 50px); 
+    transform: translate(-50%, -50%);
+    display: none;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
 
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
+.form-container.loading .new-loader {
+    display: block;
+}
+
+.calendar-title  h1 {
+    text-align:center;
+    height: 100px;
+    padding-top: 1em;
+    color: whitesmoke;
+}
+
+.calendar-title {
+    background-color: black;
+}

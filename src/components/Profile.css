@@ -1,0 +1,10 @@
+.calendar-title  h1 {
+    text-align:center;
+    height: 100px;
+    padding-top: 1em;
+    color: whitesmoke;
+}
+
+.calendar-title {
+    background-color: black;
+}

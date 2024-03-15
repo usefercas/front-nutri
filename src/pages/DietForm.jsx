@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { generarRecetas } from '../services/RecomendacionesService';
 import CalendarioSemanal from './CalendarioSemanal';
 import { getUserId } from '../stores/AccessTokenStore';
+import { confirmar } from "../services/PlanService";
 import './DietForm.css';
+
 
 function DietForm() {
     console.log("Epa");
@@ -37,24 +39,24 @@ function DietForm() {
             setData(response);
         } catch (error) {
             console.error('Error al generar las dietas:', error);
-        } finally {
             setLoading(false);
         }
     };
 
     if (data) {
         console.log(data.messageId);
-        console.log(data.data);
+        // console.log(data.data);
 
         return (
-         
-                <CalendarioSemanal diets={data.data} messageId={data.messageId} />
-        );
+                <div className='calendar-title'>
+                    <h1>Propuesta de Plan</h1>
+                    <CalendarioSemanal diets={data.data} messageId={data.messageId} action={confirmPlan} actionName={"Confirmar receta"} />
+                </div>);
     } else {
         return (
-            <div className="form-container"> {/* Nuevo contenedor para el formulario */}
+            <div className={`form-container ${loading ? 'loading' : ''}`}>
                 <div className="container">
-                    <h1 className='genera'>Generador de Dietas</h1>
+                    <h1 className='genera'>Genera tu dieta</h1>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="edad">Edad:</label>
@@ -107,15 +109,29 @@ function DietForm() {
                                 <option value="ganar_masa_muscular">Ganar masa muscular</option>
                                 <option value="mantener_peso">Mantener peso</option>
                             </select>
-                            <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Generando...' : 'Generar Dietas'}</button>
                         </div>
 
-
+                        <div className="form-group">
+                            <button type="submit" className="create-button" disabled={loading}>
+                                {loading ? 'Generando...' : 'Generar Dietas'}
+                                {loading && <span className="new-loader"></span>}
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
         );
     }
+}
+
+function confirmPlan(messageId, navigate) {
+
+    confirmar(getUserId(), messageId.messageId)
+        .then(response => {
+            console.log("Plan Confirmado");
+            navigate('/profile');
+        })
+        .catch(error => console.log("Error guardando plan: " + error));
 }
 
 export default DietForm;

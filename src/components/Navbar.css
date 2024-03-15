@@ -1,0 +1,17 @@
+
+.logo {
+  position: absolute; /* Establece la posición absoluta */
+  left: 0; /* Coloca el elemento en la esquina izquierda del contenedor */
+  width: 50px; 
+}
+/* Navbar.css */
+
+.navbar-brand {
+  position: absolute; /* Establece la posición absoluta */
+  left: 80px; /* Coloca el elemento en la esquina izquierda del contenedor */
+   /* Mueve el enlace "Home" hacia la izquierda */
+   top: 10px;
+}
+  
+
+  
