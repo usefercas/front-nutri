@@ -9,7 +9,7 @@ const Home = () => {
         <div className="content-home">
           <h1 className="title">Paktlit calcula tu dieta</h1>
           <p id="parrafo">
-            "Paktlit: aplicación para generar tu plan de dieta según tus necesidades y objetivos."
+            "Paktlit: aplicación para generar tuu plan de dieta según tus necesidades y objetivos."
           </p>
         </div>
         <div className="button-home">
@@ -35,3 +35,4 @@ const Home = () => {
 };
 
 export default Home;
+ 
