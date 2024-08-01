@@ -1,5 +1,7 @@
+/* Estilos generales para la pantalla completa */
 .home-container {
   display: flex;
+  flex-direction: column; /* Cambia la dirección de los elementos en pantallas pequeñas */
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -7,94 +9,43 @@
   background-size: cover;
   background-position: center;
   color: white;
+  padding: 0 20px; /* Añade un padding para dispositivos móviles */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño del elemento */
 }
 
-
-.button-home {
-  margin-top: 50px !important;
-  margin-left: 120px !important;
-}
-#comienza{
-  margin-top: 50px !important;
-  margin-left: 100px !important;
-}
-
-
-.create-button2 {
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.create-button2:hover {
-  background-color: darkred;
-}
-
+/* Estilo para la caja transparente */
 .transparent-box {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 100px;
+  padding: 20px; /* Ajuste el padding para pantallas pequeñas */
   border-radius: 10px;
-  margin-top: -200px; 
-  width: 80%;
+  width: 100%;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto; /* Añade margen vertical y centra horizontalmente */
 }
-#parrafo{
-  color:white;
-}
-.title, #parrafo, #comienza, .create-button2 {
+
+/* Estilo para el título */
+.title {
   font-family: 'Roboto', sans-serif;
-}
-.logo1{
-  width: 100px; 
-  height: auto; 
-  display: block; 
-  margin: 50px auto 20px;
-  padding-top: 60%;
-}
-.logo2 {
-  width: 100px; 
-  height: auto; 
-  display: block; 
-  margin: 50px auto 20px;
-  padding-top: 20%;
- 
-}
-.logo3 {
-  width: 80px; 
-  height: auto; 
-  display: block; 
-  margin: 50px auto 20px; 
-  padding-top: 20%;
-
-}
-.logo4 {
-  width: 100px; 
-  height: auto; 
-  display: block; 
-  margin: 50px auto 20px;
-  padding-top: 60%;
-}
-.iconos-container {
-  display: flex;
-  justify-content: space-around; 
-  position: fixed; 
-  bottom: 0; 
-  left: 0;
-  right: 0;
-  padding: 20px 0; 
-  background-color: rgba(0, 0, 0, 0.5); 
+  font-size: 2.5em; /* Tamaño grande para el título */
+  text-align: center;
+  margin: 0;
 }
 
-.iconos-container a {
-  margin: 0 10px; 
+/* Estilo para el párrafo */
+#parrafo {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 1.2em; /* Tamaño grande para el párrafo */
+  text-align: center;
+  margin: 20px 0;
 }
 
+/* Estilo para los botones */
+.button-home {
+  margin: 20px 0;
+}
+
+/* Estilo para el botón de registro */
 .create-button2 {
   background-color: red;
   color: white;
@@ -103,10 +54,86 @@
   padding: 10px 20px;
   cursor: pointer;
   text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 1.1em; /* Tamaño de fuente grande para el botón */
 }
 
 .create-button2:hover {
   background-color: darkred;
-  color: white; 
+  color: white;
 }
 
+/* Estilo para los logos en la parte inferior */
+.iconos-container {
+  display: flex;
+  flex-wrap: nowrap; /* No permitir que los logos se envuelvan */
+  justify-content: center; /* Centra los logos horizontalmente */
+  align-items: center; /* Centra verticalmente los logos */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px; /* Añade padding a los lados */
+  background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box; /* Incluye padding y border en el tamaño del elemento */
+  overflow-x: auto; /* Permite el desplazamiento horizontal si los logos son demasiado grandes */
+}
+
+/* Estilo para los logos individuales */
+.iconos-container a {
+  margin: 0 15px; /* Espaciado entre los logos */
+}
+
+.iconos-container .logo {
+  width: 100px; /* Tamaño base de los logos */
+  height: auto;
+  display: block;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2em; /* Ajusta el tamaño de fuente en pantallas más pequeñas */
+  }
+
+  #parrafo {
+    font-size: 1em;
+  }
+
+  .create-button2 {
+    padding: 8px 16px;
+    font-size: 1em;
+  }
+
+  .iconos-container {
+    padding: 10px; /* Ajusta el padding en pantallas más pequeñas */
+  }
+
+  .iconos-container .logo {
+    width: 80px; /* Ajusta el tamaño de los logos en pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5em; /* Ajusta aún más el tamaño de fuente en pantallas muy pequeñas */
+  }
+
+  #parrafo {
+    font-size: 0.9em;
+  }
+
+  .create-button2 {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+
+  .iconos-container {
+    padding: 5px; /* Reduce el padding en pantallas muy pequeñas */
+  }
+
+  .iconos-container .logo {
+    width: 60px; /* Ajusta el tamaño de los logos en pantallas pequeñas */
+  }
+}

@@ -1,17 +1,55 @@
-
-.logo {
-  position: absolute; /* Establece la posición absoluta */
-  left: 0; /* Coloca el elemento en la esquina izquierda del contenedor */
-  width: 50px; 
+/* Estilos básicos para la barra de navegación */
+.navbar {
+  background-color: #343a40; /* Color de fondo oscuro */
 }
-/* Navbar.css */
 
-.navbar-brand {
-  position: absolute; /* Establece la posición absoluta */
-  left: 80px; /* Coloca el elemento en la esquina izquierda del contenedor */
-   /* Mueve el enlace "Home" hacia la izquierda */
-   top: 10px;
+.navbar-brand, .nav-link {
+  color: white;
 }
-  
 
-  
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+}
+
+.navbar-nav {
+  flex-direction: row; /* Alinea los ítems horizontalmente */
+}
+
+.nav-item {
+  margin: 0 10px; /* Espaciado entre los ítems de navegación */
+}
+
+.nav-link {
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Añade un fondo sutil al pasar el ratón */
+  border-radius: 5px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Cambia la dirección de los ítems en pantallas pequeñas */
+    text-align: center; /* Centra el texto en dispositivos móviles */
+  }
+
+  .navbar-nav .nav-item {
+    margin: 10px 0; /* Añade espacio vertical entre ítems en pantallas pequeñas */
+  }
+
+  .navbar-toggler {
+    margin-left: auto; /* Alinea el botón de colapso a la derecha */
+  }
+
+  .logo {
+    margin: 0 auto; /* Centra el logo horizontalmente */
+  }
+}
