@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import italia from '/italia.png'; // Asegúrate de importar la imagen correctamente
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div className="home-container" style={{ backgroundImage: `url(${italia})` }}>
       <div className="transparent-box">
         <div className="content-home">
           <h1 className="title">Paktlit calcula tu dieta</h1>
           <p id="parrafo">
-            "Paktlit: aplicación para generar tuu plan de dieta según tus necesidades y objetivos."
+            "Paktlit: aplicación para generar tu plan de dieta según tus necesidades y objetivos."
           </p>
         </div>
         <div className="button-home">
@@ -35,4 +36,3 @@ const Home = () => {
 };
 
 export default Home;
- 

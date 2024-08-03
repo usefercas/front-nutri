@@ -1,7 +1,7 @@
 /* Estilos generales para la pantalla completa */
 .home-container {
   display: flex;
-  flex-direction: column; /* Cambia la dirección de los elementos en pantallas pequeñas */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -9,24 +9,24 @@
   background-size: cover;
   background-position: center;
   color: white;
-  padding: 0 20px; /* Añade un padding para dispositivos móviles */
-  box-sizing: border-box; /* Incluye padding y border en el tamaño del elemento */
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* Estilo para la caja transparente */
 .transparent-box {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px; /* Ajuste el padding para pantallas pequeñas */
+  padding: 20px;
   border-radius: 10px;
   width: 100%;
   max-width: 600px;
-  margin: 20px auto; /* Añade margen vertical y centra horizontalmente */
+  margin: 20px auto;
 }
 
 /* Estilo para el título */
 .title {
   font-family: 'Roboto', sans-serif;
-  font-size: 2.5em; /* Tamaño grande para el título */
+  font-size: 2.5em;
   text-align: center;
   margin: 0;
 }
@@ -35,7 +35,7 @@
 #parrafo {
   font-family: 'Roboto', sans-serif;
   color: white;
-  font-size: 1.2em; /* Tamaño grande para el párrafo */
+  font-size: 1.2em;
   text-align: center;
   margin: 20px 0;
 }
@@ -56,7 +56,8 @@
   text-decoration: none;
   display: block;
   text-align: center;
-  font-size: 1.1em; /* Tamaño de fuente grande para el botón */
+  font-size: 1.1em;
+  transition: background-color 0.3s ease; /* Añadido para transiciones suaves */
 }
 
 .create-button2:hover {
@@ -67,26 +68,26 @@
 /* Estilo para los logos en la parte inferior */
 .iconos-container {
   display: flex;
-  flex-wrap: nowrap; /* No permitir que los logos se envuelvan */
-  justify-content: center; /* Centra los logos horizontalmente */
-  align-items: center; /* Centra verticalmente los logos */
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 10px 20px; /* Añade padding a los lados */
+  padding: 10px 20px;
   background-color: rgba(0, 0, 0, 0.5);
-  box-sizing: border-box; /* Incluye padding y border en el tamaño del elemento */
-  overflow-x: auto; /* Permite el desplazamiento horizontal si los logos son demasiado grandes */
+  box-sizing: border-box;
+  overflow-x: auto;
 }
 
 /* Estilo para los logos individuales */
 .iconos-container a {
-  margin: 0 15px; /* Espaciado entre los logos */
+  margin: 0 15px;
 }
 
 .iconos-container .logo {
-  width: 100px; /* Tamaño base de los logos */
+  width: 100px;
   height: auto;
   display: block;
 }
@@ -94,7 +95,7 @@
 /* Estilos responsivos */
 @media (max-width: 768px) {
   .title {
-    font-size: 2em; /* Ajusta el tamaño de fuente en pantallas más pequeñas */
+    font-size: 2em;
   }
 
   #parrafo {
@@ -107,17 +108,17 @@
   }
 
   .iconos-container {
-    padding: 10px; /* Ajusta el padding en pantallas más pequeñas */
+    padding: 10px;
   }
 
   .iconos-container .logo {
-    width: 80px; /* Ajusta el tamaño de los logos en pantallas medianas */
+    width: 80px;
   }
 }
 
 @media (max-width: 480px) {
   .title {
-    font-size: 1.5em; /* Ajusta aún más el tamaño de fuente en pantallas muy pequeñas */
+    font-size: 1.5em;
   }
 
   #parrafo {
@@ -130,10 +131,10 @@
   }
 
   .iconos-container {
-    padding: 5px; /* Reduce el padding en pantallas muy pequeñas */
+    padding: 5px;
   }
 
   .iconos-container .logo {
-    width: 60px; /* Ajusta el tamaño de los logos en pantallas pequeñas */
+    width: 60px;
   }
 }
